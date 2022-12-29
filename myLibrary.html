@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Library</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">myLibrary</div>
+            <div class="page-title">Library</div>
+            <div class="details">
+                <div class="pic">
+                    <img src="./images/samsung-people.jpg" alt="A picture of Kingsley" height="35px" width="35px">
+                </div>
+                <div class="name">Welcome,<br>King</div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="info-bar">
+                <div class="info-box"></div>
+                <div class="sorting">
+                    <div class="order">
+                        <label for="order">Sort:</label>
+                        <select class="order-by" id="order" name="order">
+                            <optgroup label="order">
+                            <option selected>Descending</option>
+                            <option>Ascending</option>
+                            </optgroup>
+                        </select>
+                        <select name="order-by" id="order-by">
+                            <optgroup label="order-by">
+                                <option>Date Created</option>
+                                <option selected>Date Modified</option>
+                                <option>Alphabetical</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="example">
+                    <ul>
+                        <li>Title: Man From The Moon</li>
+                        <li>Pages: 208</li>
+                        <li>Author(s): KingPinLinGao</li>
+                        <li>Published: 1990</li>
+                        <li>Read? <input type="checkbox" name="read" id="read" checked></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="new-book">
+                <Button>New Book</Button>
+            </div>
+            <div class="book-form">
+                <div class="form">
+                    <p>Add Book Details</p>
+                    <div class="book-title">
+                        <label for="book-title">Book Title</label>
+                        <input type="text" name="book-title" id="book-title">
+                    </div>
+                    <div class="book-author">
+                        <label for="book-author">Book Author(s)</label>
+                        <input type="text" name="book-author" id="book-author">
+                    </div>
+                    <div class="pages">
+                        <label for="pages">Number of Pages</label>
+                        <input type="number" name="pages" id="pages">
+                    </div>
+                    <div class="published-date">
+                        <label for="published-date">Published Date</label>
+                        <input type="date" name="published-date" id="published-date">
+                    </div>
+                    <div class="read-status">
+                        <label for="read-status">Read?</label>
+                        <input type="checkbox" name="read-status" id="read-status" value="read">
+                    </div>
+                    <div class="add-book">
+                        <button class="insert-book">Insert</button>
+                        <button class="empty-fields">Empty Fields</button>
+                        <p class="caution">PLEASE FILL EMPTY FIELDS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js" defer></script>
+</body>
+</html>
