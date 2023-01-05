@@ -14,15 +14,10 @@ let readStatus = document.querySelector('#read-status');
 let BOOKARR = [bookTitle,bookAuthor,pages,publishedDate,readStatus];
 
 
-// console.log(readStatus.value);
-
-
-
 createBook.addEventListener('click',showForm);
 bookForm.addEventListener('click',hideForm,{capture: false})
 emptyFields.addEventListener('click',clearFields);
 submit.addEventListener('click',addBookToLibrary);
-// readStatus.addEventListener('input',checkSomething)
 
 
 function showForm(){
@@ -54,7 +49,6 @@ function addBookToLibrary(e){
         }
      }
     myLibrary.push(new Book());
-    // console.log(myLibrary);
     displayBook();
     bookForm.style.display = "none";
     clearFields();
@@ -69,8 +63,6 @@ function Book(){
     this.readStatus = readStatus.checked;
 }
 
-// console.log(new Book());
-
 function displayBook(){
     let content = document.querySelector('.content');
     let div = document.createElement('div');
@@ -79,13 +71,33 @@ function displayBook(){
     let currentObj = myLibrary[len-1];
     let objectValues = Object.values(currentObj);
     let details =['Title: ','Author(s): ','Pages: ','Published: ','Read? '];
+    let red1 = Math.floor(Math.random() * 256);
+    let red2 = Math.floor(Math.random() * 256);
+    let green1 = Math.floor(Math.random() * 256);
+    let green2 = Math.floor(Math.random() * 256);
+    let blue1 = Math.floor(Math.random() * 256);
+    let blue2 = Math.floor(Math.random() * 256);
+    for(let i = 0; i < 5; i++){
+        let li = document.createElement('li');
+        if(i==4){
+            li.textContent = details[i];
+            createCheckBox();
+        }
+        else{
+        li.textContent = details[i] + objectValues[i];
+        } 
+        ul.appendChild(li);
 
-   for(let i = 0; i < 5; i++){
-    let li = document.createElement('li');
-    li.textContent = details[i] + objectValues[i];
-    ul.appendChild(li);
-   }
+        function createCheckBox(){
+            let checkBox = document.createElement("input");
+            checkBox.setAttribute('type','checkbox');
+            checkBox.checked = objectValues[i];
+            li.appendChild(checkBox);
+        }
+    }
+
    div.dataset.key = len - 1;
+   div.style.backgroundImage = `linear-gradient(to right,rgb(${red1},${green1},${blue1}) 0%,rgb(${red2},${green2},${blue2}) 100%)`;
    div.appendChild(ul);
    content.appendChild(div);
 }
