@@ -98,6 +98,24 @@ function displayBook(){
 
    div.dataset.key = len - 1;
    div.style.backgroundImage = `linear-gradient(to right,rgb(${red1},${green1},${blue1}) 0%,rgb(${red2},${green2},${blue2}) 100%)`;
+   div.style.position = 'relative';
    div.appendChild(ul);
+   createCancelButton();
    content.appendChild(div);
+
+
+
+   function createCancelButton(){
+    let cancelButton = document.createElement('button');
+    cancelButton.textContent = 'X'
+    cancelButton.style.position = 'absolute';
+    cancelButton.style.right = '5px';
+    cancelButton.style.top = '5px';
+    cancelButton.style.backgroundColor = 'rgba(0,0,0,0)';
+    div.appendChild(cancelButton);
+
+    cancelButton.addEventListener('click',() => div.remove());
+    }
 }
+
+
