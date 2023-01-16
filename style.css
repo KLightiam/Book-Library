@@ -26,6 +26,14 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 1px 1px 3px 0px gray;
+}
+
+.page-title > p {
+    background-color: rgb(126, 79, 4);
+    width: 3.8rem;
+    text-align: center;
+    border-radius: 1rem;
 }
 
 .header .details{
